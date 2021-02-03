@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using PieShop.Models;
+using PieShop.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -23,7 +24,11 @@ namespace PieShop.Controllers
 
         public ViewResult List()
         {
-            return View(_pieRepository.AllPies);
+            //Create a ViewModel called PieListViewModel which can be use to collect data to transfer to view page 
+            PieListViewModel pieListViewModel = new PieListViewModel();
+            pieListViewModel.Pies = _pieRepository.AllPies;
+            pieListViewModel.CurrentCategory = "Pies";
+            return View(pieListViewModel);
         }
     }
 }

@@ -1,0 +1,18 @@
+﻿@model PieShop.ViewModels.PieListViewModel
+    <!--model lowercase tell the view that the model it will use is of type PieListViewModel-->
+
+
+
+
+
+
+    <!--Model Uppercase tell the view to use the data passed to the view from the controller-->
+    @foreach (var pie in Model.Pies)
+    {
+        <div class="blockquote">
+            <h4>@pie.Name</h4>
+            <h4>@pie.ShortDescription</h4>
+            <h4>@pie.Price</h4>
+            <hr />
+        </div>
+    }
