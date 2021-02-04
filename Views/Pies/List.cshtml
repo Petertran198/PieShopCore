@@ -2,17 +2,22 @@
     <!--model lowercase tell the view that the model it will use is of type PieListViewModel-->
 
 
+<h1>@Model.CurrentCategory</h1>
 
 
-
-
-    <!--Model Uppercase tell the view to use the data passed to the view from the controller-->
-    @foreach (var pie in Model.Pies)
-    {
-        <div class="blockquote">
-            <h4>@pie.Name</h4>
-            <h4>@pie.ShortDescription</h4>
-            <h4>@pie.Price</h4>
-            <hr />
+<!--Model Uppercase tell the view to use the data passed to the view from the controller-->
+@foreach (var pie in Model.Pies)
+{
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <img src="@pie.ImageThumbnailUrl" alt="">
+            <div class="caption">
+                <h3 class="pull-right">@pie.Price.ToString("c")</h3>
+                <h3>
+                    <a>@pie.Name</a>
+                </h3>
+                <p>@pie.ShortDescription</p>
+            </div>
         </div>
-    }
+    </div>
+}
