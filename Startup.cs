@@ -63,7 +63,7 @@ namespace PieShop
                 //This code is responsible to map incoming request to correct route(controller/action)  
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{Id?}"
+                    pattern: "{controller=Pies}/{action=List}/{Id?}"
 
                 );
             });
