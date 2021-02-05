@@ -30,7 +30,7 @@ namespace PieShop
         // This method gets called by the runtime. Use this method to add services to the container.Which you can use for depenency injection
         public void ConfigureServices(IServiceCollection services)
         {
-            
+            //U have access to <AppDbContext> to be used anywhere u want cause of depenency injection. You do not have to instantiate a new one. Just call it in your constructor to have access to the database
             services.AddDbContext<AppDbContext>(options =>
             options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
             //---------------End of connecting database ---------------
