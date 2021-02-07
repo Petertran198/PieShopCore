@@ -55,8 +55,11 @@ namespace PieShop
             app.UseHttpsRedirection();
             //Allows app to serve static files such as images,js,css,etc
             app.UseStaticFiles();
+            //Added this to be able to use session
+            app.UseSession();
 
             app.UseRouting();
+
 
             app.UseEndpoints(endpoints =>
             {
