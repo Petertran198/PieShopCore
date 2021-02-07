@@ -1,0 +1,19 @@
+﻿@model Pie
+<!-- This partial needs to recieve a pie data source -->
+
+
+
+<div class="col m-2" style="max-width: 400px;">
+    <div class="card ">
+        <img src="@Model.ImageThumbnailUrl" alt="">
+        <div class="caption">
+            <h3>@Model.Price.ToString("c")</h3>
+            <h5>
+                <a>@Model.Name</a>
+            </h5>
+            <hr />
+            <p>@Model.ShortDescription </p>
+
+        </div>
+    </div>
+</div>

@@ -8,19 +8,9 @@
     <!--Model Uppercase tell the view to use the data passed to the view from the controller-->
     @foreach (var pie in Model.Pies)
     {
-        <div class="col-md-3">
-            <div class="thumbnail m-3">
-                <img src="@pie.ImageThumbnailUrl" alt="">
-                <div class="caption">
-                    <h3 class="pull-right">@pie.Price.ToString("c")</h3>
-                    <h3>
-                        <a>@pie.Name</a>
-                    </h3>
-                    <p>@pie.ShortDescription </p>
-                   
-                </div>
-            </div>
-        </div>
+        //Calling a partial view and passing in pie as the data object for that partial to use for each iteration
+        <partial name="_PieList" model="pie" />
+
     }
 
 </div>
