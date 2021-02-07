@@ -36,7 +36,7 @@ namespace PieShop
             //---------------End of connecting database ---------------
 
             //Two services I added
-            //AddScoped will create an instance of MockPieRepository as IPieRepository that will disapper when the request is over
+            //AddScoped will create an instance of PieRepository as IPieRepository that will disapper when the request is over
             //Whenever a class is going to require any of these type they will be injected automatically by the build in dependency injection system
             services.AddScoped<IPieRepository, PieRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
@@ -63,7 +63,7 @@ namespace PieShop
                 //This code is responsible to map incoming request to correct route(controller/action)  
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Pies}/{action=List}/{Id?}"
+                    pattern: "{controller=Home}/{action=Index}/{Id?}"
 
                 );
             });

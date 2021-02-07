@@ -1,0 +1,15 @@
+﻿@model HomeViewModel
+
+
+<partial name="_Carousel" />
+
+<h1>Pies of The Week</h1>
+<div class="row">
+    <!--Model Uppercase tell the view to use the data passed to the view from the controller-->
+    @foreach (var pie in Model.PieOfTheWeek)
+    {
+        //Calling a partial view and passing in pie as the data object for that partial to use for each iteration
+        <partial name="_PieList" model="pie" />
+    }
+
+</div>
