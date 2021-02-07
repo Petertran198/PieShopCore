@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using PieShop.Models;
 
 namespace PieShop.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20210207185243_ColumnChanged")]
+    partial class ColumnChanged
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -272,8 +274,7 @@ namespace PieShop.Migrations
                         .HasColumnType("int");
 
                     b.Property<string>("ShoppingCartID")
-                        .HasColumnType("nvarchar(max)")
-                        .HasColumnName("ShoppingCartId");
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("ShopingCartItemID");
 

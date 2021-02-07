@@ -41,6 +41,15 @@ namespace PieShop
             services.AddScoped<IPieRepository, PieRepository>();
             services.AddScoped<ICategoryRepository, CategoryRepository>();
 
+            //------------------- SESSION
+            //When the user come to the site and request something that requires a Shopping Cart,
+            // the GetCart(sp) method will be invoke which brings in the services obj and create a session
+            services.AddScoped<ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+            //This is needed to bring in session
+            services.AddHttpContextAccessor();
+            services.AddSession();
+            //----------------------- SESSION
+
             services.AddControllersWithViews();
         }
 
@@ -55,7 +64,7 @@ namespace PieShop
             app.UseHttpsRedirection();
             //Allows app to serve static files such as images,js,css,etc
             app.UseStaticFiles();
-            //Added this to be able to use session
+            //Added this to be able to use session -----SESSION
             app.UseSession();
 
             app.UseRouting();
